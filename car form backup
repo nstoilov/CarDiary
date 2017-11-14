@@ -1,0 +1,71 @@
+import React, { Component } from 'react';
+import { View, DatePickerAndroid } from 'react-native';
+import { connect } from 'react-redux';
+// import { Actions } from 'react-native-router-flux';
+import { carUpdate } from '../actions';
+import { Card, CardSection, Button, Input } from './common';
+
+class CarForm extends Component {
+    async renderDatePicker() {
+        const { action, year, month, day } = await DatePickerAndroid.open({
+            date: new Date(),
+            mode: 'spinner'
+        });
+
+        if (action === DatePickerAndroid.dismissedAction) {
+            return;
+        }
+        
+        console.log({ action, year, month, day });
+    }
+
+    render() {
+        return (
+            <View>
+                <Card>
+                    <CardSection>
+                        <Input
+                        label="Name"
+                        placeholder="Cary"
+                        value={this.props.name}
+                        onChangeText={value => this.props.carUpdate({ prop: 'name', value })}
+                        //es6 value:value === value
+                        />
+                    </CardSection>
+                    <CardSection>
+                    <Input
+                        label="SummerTyres"
+                        placeholder="Cary"
+                        value={this.props.summerTyres}
+                        onChangeText={value => this.props.carUpdate({ prop: 'summerTyres', value })}
+                        //es6 value:value === value
+                    />
+                    </CardSection>
+                    <CardSection>
+                    <Input
+                        label="WinterTyres"
+                        placeholder="Hi"
+                        value={this.props.winterTyres}
+                        onChangeText={value => this.props.carUpdate({ prop: 'winterTyres', value })}
+                        //es6 value:value === value
+                    />
+                    </CardSection>
+                    <CardSection>
+                        <Button onPress={this.renderDatePicker.bind(this)}>
+                            Test Calendar
+                        </Button>
+                    </CardSection>
+                </Card>
+            </View>
+        );
+    }
+}
+
+const mapStateToProps = (state) => {
+    const { name, summerTyres, WinterTyres } = state.carForm;
+
+    return { name, summerTyres, WinterTyres };
+};
+
+export default connect(mapStateToProps, { carUpdate })(CarForm);
+
