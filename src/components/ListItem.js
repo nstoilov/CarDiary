@@ -5,12 +5,18 @@ import { CardSection } from './common';
 
 class ListItem extends Component {
     render() {
-        return (
-            <CardSection>
-                <Text>
+        return (           
+            <CardSection 
+                style={{ 
+                justifyContent: 'center',
+                borderBottomWidth: 1,
+                borderColor: '#ddd'
+                 }}
+            >
+                <Text style={{ fontSize: 18 }}>
                     List Item
                 </Text>
-            </CardSection>
+            </CardSection>            
         );
     }
 }

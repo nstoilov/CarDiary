@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import DatePicker from 'react-native-datepicker';
 // import { Actions } from 'react-native-router-flux';
 import { carUpdate } from '../actions';
-import { Card, CardSection, Input, } from './common';
+import { CardSection, Input, } from './common';
 
 class CarForm extends Component {
     async renderDatePicker() {
@@ -16,160 +16,158 @@ class CarForm extends Component {
         if (action === DatePickerAndroid.dismissedAction) {
             return;
         }
-        
+
         console.log({ action, year, month, day });
     }
 
     render() {
         return (
             <View>
-                <Card>
-                    <CardSection>
-                        <Input
-                        label="Име"
-                        placeholder="Избери име"
+                <CardSection>
+                    <Input
+                        label="Name"
+                        placeholder="Enter a name"
                         value={this.props.name}
                         onChangeText={value => this.props.carUpdate({ prop: 'name', value })}
-                        //es6 value:value === value
-                        />
-                    </CardSection>  
-                    <CardSection style={styles.containerStyle}>
-                        <Text style={styles.nameStyle}>Техинически преглед</Text>
+                    //es6 value:value === value
+                    />
+                </CardSection>
+                <CardSection style={styles.containerStyle}>
+                    <Text style={styles.nameStyle}>Techinal Inspection</Text>
                     <DatePicker
                         style={styles.dateStyle}
                         date={this.props.techCheck}
                         mode="date"
-                        placeholder="Избери дата"
-                        format="DD-MM-YYYY"                        
+                        placeholder="Pick a date"
+                        format="DD-MM-YYYY"
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
-                        showIcon={false}    
+                        showIcon={false}
                         customStyles={{
                             placeholderText: {
                                 color: '#424444'
-                              }
-                        }}                        
-                        onDateChange={date => this.props.carUpdate({ prop: 'techCheck', value: date })}                      
+                            }
+                        }}
+                        onDateChange={date => this.props.carUpdate({ prop: 'techCheck', value: date })}
                     />
-                    </CardSection>    
-                    <CardSection style={styles.containerStyle}>
-                        <Text style={styles.nameStyle}>Профилактика</Text>
+                </CardSection>
+                <CardSection style={styles.containerStyle}>
+                    <Text style={styles.nameStyle}>Maintenance</Text>
                     <DatePicker
                         style={styles.dateStyle}
                         date={this.props.maint}
                         mode="date"
-                        placeholder="Избери дата"
-                        format="DD-MM-YYYY"                        
+                        placeholder="Pick a date"
+                        format="DD-MM-YYYY"
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
-                        showIcon={false}         
+                        showIcon={false}
                         customStyles={{
                             placeholderText: {
                                 color: '#424444'
-                              }
-                        }}                   
-                        onDateChange={date => this.props.carUpdate({ prop: 'maint', value: date })}                      
+                            }
+                        }}
+                        onDateChange={date => this.props.carUpdate({ prop: 'maint', value: date })}
                     />
-                    </CardSection>     
-                    <CardSection style={styles.containerStyle}>
-                        <Text style={styles.nameStyle}>Гражданска отговорност</Text>
+                </CardSection>
+                <CardSection style={styles.containerStyle}>
+                    <Text style={styles.nameStyle}>Citizen Insurance</Text>
                     <DatePicker
                         style={styles.dateStyle}
                         date={this.props.citizenInsuranse}
                         mode="date"
-                        placeholder="Избери дата"
-                        format="DD-MM-YYYY"                        
+                        placeholder="Pick a date"
+                        format="DD-MM-YYYY"
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
-                        showIcon={false}    
+                        showIcon={false}
                         customStyles={{
                             placeholderText: {
                                 color: '#424444'
-                              }
-                        }}                        
-                        onDateChange={date => this.props.carUpdate({ prop: 'citizenInsuranse', value: date })}                      
+                            }
+                        }}
+                        onDateChange={date => this.props.carUpdate({ prop: 'citizenInsuranse', value: date })}
                     />
-                    
-                    </CardSection>    
-                    <CardSection style={styles.containerStyle}>
-                        <Text style={styles.nameStyle}>Автокаско</Text>
+
+                </CardSection>
+                <CardSection style={styles.containerStyle}>
+                    <Text style={styles.nameStyle}>Car Insurance</Text>
                     <DatePicker
                         style={styles.dateStyle}
                         date={this.props.carInsurance}
                         mode="date"
-                        placeholder="избери дата"
-                        format="DD-MM-YYYY"                        
+                        placeholder="Pick a date"
+                        format="DD-MM-YYYY"
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
-                        showIcon={false}   
+                        showIcon={false}
                         customStyles={{
                             placeholderText: {
                                 color: '#424444'
-                              }
-                        }}                         
-                        onDateChange={date => this.props.carUpdate({ prop: 'carInsurance', value: date })}                      
+                            }
+                        }}
+                        onDateChange={date => this.props.carUpdate({ prop: 'carInsurance', value: date })}
                     />
-                    </CardSection>             
-                    <CardSection style={styles.containerStyle}>
-                        <Text style={styles.nameStyle}>Зимни гуми</Text>
+                </CardSection>
+                <CardSection style={styles.containerStyle}>
+                    <Text style={styles.nameStyle}>Winter Tyres</Text>
                     <DatePicker
                         style={styles.dateStyle}
                         date={this.props.winterTyres}
                         mode="date"
-                        placeholder="избери дата"
-                        format="DD-MM-YYYY"                        
+                        placeholder="Pick a date"
+                        format="DD-MM-YYYY"
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
-                        showIcon={false}    
+                        showIcon={false}
                         customStyles={{
                             placeholderText: {
                                 color: '#424444'
-                              }
-                        }}                        
-                        onDateChange={date => this.props.carUpdate({ prop: 'winterTyres', value: date })}                      
+                            }
+                        }}
+                        onDateChange={date => this.props.carUpdate({ prop: 'winterTyres', value: date })}
                     />
-                    </CardSection>
-                    <CardSection style={styles.containerStyle}>
-                        <Text style={styles.nameStyle}>Летни Гуми</Text>
+                </CardSection>
+                <CardSection style={styles.containerStyle}>
+                    <Text style={styles.nameStyle}>Summer Tyres</Text>
                     <DatePicker
                         style={styles.dateStyle}
                         date={this.props.summerTyres}
                         mode="date"
-                        placeholder="избери дата"
-                        format="DD-MM-YYYY"                        
+                        placeholder="Pick a date"
+                        format="DD-MM-YYYY"
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
-                        showIcon={false}         
+                        showIcon={false}
                         customStyles={{
                             placeholderText: {
                                 color: '#424444'
-                              }
-                        }}               
-                        onDateChange={date => this.props.carUpdate({ prop: 'summerTyres', value: date })}                      
+                            }
+                        }}
+                        onDateChange={date => this.props.carUpdate({ prop: 'summerTyres', value: date })}
                     />
-                    </CardSection>                   
-                </Card>
+                </CardSection>
             </View>
         );
     }
 }
 
-const styles = {    
+const styles = {
     nameStyle: {
         flex: 1,
-        fontSize: 18,
-        paddingLeft: 20,   
+        fontSize: 17,
+        paddingLeft: 20,
         color: '#252626',
         alignItems: 'center'
-        
+
     },
     dateStyle: {
-        flex: 1    
+        flex: 1
     },
     containerStyle: {
-		flexDirection: 'row',
-		alignItems: 'center'
-	}
+        flexDirection: 'row',
+        alignItems: 'center'
+    }
 };
 
 

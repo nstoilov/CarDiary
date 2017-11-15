@@ -15,7 +15,7 @@ const RouterComponent = () => {
                     title="CarList" 
                     initial
                 />
-                <Scene key="CarForm" component={CarCreate} title="Въдеди кола" />
+                <Scene key="CarForm" component={CarCreate} title="Add a car" />
             </Scene>
         </Router>
     );
