@@ -1,7 +1,7 @@
 import React from 'react';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import CarList from './components/CarList';
-import CarForm from './components/CarForm';
+import CarCreate from './components/CarCreate';
 
 const RouterComponent = () => {
     return (
@@ -15,7 +15,7 @@ const RouterComponent = () => {
                     title="CarList" 
                     initial
                 />
-                <Scene key="CarForm" component={CarForm} title="Въдеди кола" />
+                <Scene key="CarForm" component={CarCreate} title="Въдеди кола" />
             </Scene>
         </Router>
     );

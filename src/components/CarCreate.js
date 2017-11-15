@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { employeeUpdate, employeeCreate } from '../actions';
+import { carCreate } from '../actions';
 import { Card, CardSection, Button } from './common';
-import EmployeeForm from './EmployeeForm';
+import CarForm from './CarForm';
 
-class EmployeeCreate extends Component {
+class CarCreate extends Component {
 
     onButtonPress() {
-        const { name, phone, shift } = this.props;
-        
-        this.props.employeeCreate({ name, phone, shift });
+        const {
+            name,
+            summerTyres,
+            winterTyres,
+            techCheck,
+            maint,
+            citizenInsuranse,
+            carInsurance
+         } = this.props;
+
+        this.props.carCreate({
+            name,
+            summerTyres,
+            winterTyres,
+            techCheck,
+            maint,
+            citizenInsuranse,
+            carInsurance
+        });
     }
 
     render() {
         return (
             <Card>
-                <EmployeeForm {...this.props} />
+                <CarForm {...this.props} />
                 <CardSection>
                     <Button onPress={this.onButtonPress.bind(this)}>
                         Create
@@ -27,13 +43,29 @@ class EmployeeCreate extends Component {
     }
 }
 
-//change
-const mapStateToProps = (state) => {
-    const { name, phone, shift } = state.employeeForm;
 
-    return { name, phone, shift };
+const mapStateToProps = (state) => {
+    const {
+        name,
+        summerTyres,
+        winterTyres,
+        techCheck,
+        maint,
+        citizenInsuranse,
+        carInsurance
+     } = state.carForm;
+
+    return {
+        name,
+        summerTyres,
+        winterTyres,
+        techCheck,
+        maint,
+        citizenInsuranse,
+        carInsurance
+    };
 };
 
 export default connect(mapStateToProps, {
-    employeeUpdate, employeeCreate
-})(EmployeeCreate);
+    carCreate
+})(CarCreate);

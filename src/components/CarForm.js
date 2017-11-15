@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import DatePicker from 'react-native-datepicker';
 // import { Actions } from 'react-native-router-flux';
 import { carUpdate } from '../actions';
-import { Card, CardSection, Input, Button } from './common';
+import { Card, CardSection, Input, } from './common';
 
 class CarForm extends Component {
     async renderDatePicker() {
@@ -147,12 +147,7 @@ class CarForm extends Component {
                         }}               
                         onDateChange={date => this.props.carUpdate({ prop: 'summerTyres', value: date })}                      
                     />
-                    </CardSection>
-                    <CardSection>
-                        <Button>
-                            Запази
-                        </Button>
-                    </CardSection>
+                    </CardSection>                   
                 </Card>
             </View>
         );
@@ -179,9 +174,24 @@ const styles = {
 
 
 const mapStateToProps = (state) => {
-    const { name, summerTyres, winterTyres, techCheck, maint, citizenInsuranse, carInsurance } = state.carForm;
+    const {
+        name,
+        summerTyres,
+        winterTyres,
+        techCheck,
+        maint,
+        citizenInsuranse,
+        carInsurance } = state.carForm;
 
-    return { name, summerTyres, winterTyres, techCheck, maint, citizenInsuranse, carInsurance };
+    return {
+        name,
+        summerTyres,
+        winterTyres,
+        techCheck,
+        maint,
+        citizenInsuranse,
+        carInsurance
+    };
 };
 
 export default connect(mapStateToProps, { carUpdate })(CarForm);
