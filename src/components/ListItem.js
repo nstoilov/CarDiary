@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
-// import { Actions } from 'react-native-router-flux';
+import { Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import { CardSection } from './common';
 
 class ListItem extends Component {
+    onRowPress() {
+        console.log('row is pressed');
+        Actions.CarUpdate({ car: this.props.car });
+    }
     render() {
-        return (           
+        const { name } = this.props.car;
+        return (         
+            <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
+            <View>  
             <CardSection 
                 style={{ 
                 justifyContent: 'center',
@@ -14,9 +21,11 @@ class ListItem extends Component {
                  }}
             >
                 <Text style={{ fontSize: 18 }}>
-                    List Item
+                    {name}
                 </Text>
-            </CardSection>            
+            </CardSection>      
+            </View>
+            </TouchableWithoutFeedback>      
         );
     }
 }
