@@ -52,7 +52,7 @@ class CarUpdate extends Component {
         return (
             <Card>
                 <CarForm />
-                <CardSection>
+                <CardSection >
                     <Button onPress={this.onButtonPress.bind(this)}>
                         Save Changes
                     </Button>

@@ -33,8 +33,8 @@ const styles = {
     borderColor: '#007aff',
     marginLeft: 5,
     marginRight: 5,
-    marginTop: 15,
-    marginBottom: 15
+    marginTop: 5,
+    marginBottom: 5
   }
 };
 

@@ -4,7 +4,9 @@ import { Actions } from 'react-native-router-flux';
 import {
     CAR_UPDATE,
     CAR_CREATE,
-    CARS_FETCH_SUCCESS
+    CARS_FETCH_SUCCESS,
+    CARS_SAVE_SUCCESS,
+    FORM_RESET
 } from './types';
 
 export const carUpdate = ({ prop, value }) => {
@@ -37,7 +39,7 @@ export const carCreate = ({
             })
             .then(() => {
                 dispatch({ type: CAR_CREATE });
-                Actions.CarList();
+                Actions.carList();
             });
     };
 };
@@ -74,6 +76,7 @@ export const carSave = ({
          })
         .then(() => {
             dispatch({ type: CARS_SAVE_SUCCESS });
+            console.log('save successfull');
             Actions.main({ type: 'reset' });
         });
     };
@@ -86,5 +89,11 @@ export const carDelete = ({ uid }) => {
         .then(() => {
             Actions.main({ type: 'reset' });
         });
+    };
+};
+
+export const formReset = () => {
+    return {
+        type: FORM_RESET
     };
 };

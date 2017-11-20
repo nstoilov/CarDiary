@@ -6,21 +6,15 @@ import { CardSection } from './common';
 class ListItem extends Component {
     onRowPress() {
         console.log('row is pressed');
-        Actions.CarUpdate({ car: this.props.car });
+        Actions.carUpdate({ car: this.props.car });
     }
     render() {
         const { name } = this.props.car;
         return (         
             <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
             <View>  
-            <CardSection 
-                style={{ 
-                justifyContent: 'center',
-                borderBottomWidth: 1,
-                borderColor: '#ddd'
-                 }}
-            >
-                <Text style={{ fontSize: 18 }}>
+            <CardSection style={styles.cardSectionStyle}>
+                <Text style={styles.textStyle}>
                     {name}
                 </Text>
             </CardSection>      
@@ -29,6 +23,21 @@ class ListItem extends Component {
         );
     }
 }
+
+    const styles = {        
+            cardSectionStyle: {
+                marginTop: 15,
+                marginBottom: 5,
+                marginLeft: 20,
+                marginRight: 20,
+                justifyContent: 'center',
+                borderBottomWidth: 1,
+                borderColor: '#ddd'
+            },
+            textStyle: {
+                fontSize: 20 
+            }
+        };
 
 export default ListItem;
 

@@ -11,16 +11,17 @@ const Confirm = ({ children, visible, onAccept, onDecline }) => {
         <Modal
             visible={visible}
             transparent
-            animationType="slide"
-            onRequestClose={() => {}}
+            animationType="fade"
+            onRequestClose={() => { }}
         >
             <View style={containerStyle}>
+
                 <CardSection style={cardSectionStyle}>
                     <Text style={textStyle}>
                         {children}
                     </Text>
                 </CardSection>
-                <CardSection>
+                <CardSection style={cardSectionStyle}>
                     <Button onPress={onAccept}>
                         Yes
                     </Button>
@@ -34,7 +35,9 @@ const Confirm = ({ children, visible, onAccept, onDecline }) => {
 };
 
 const styles = {
+
     cardSectionStyle: {
+        backgroundColor: '#fff',
         justifyContent: 'center'
     },
     textStyle: {
@@ -43,11 +46,16 @@ const styles = {
         textAlign: 'center',
         lineHeight: 40
     },
+    buttonStyle: {
+        flexDirection: 'row',
+        flex: 1,
+
+    },
     containerStyle: {
         backgroundColor: 'rgba(0, 0, 0, 0.75)',
         position: 'relative',
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'flex-end'
     }
 };
 

@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { carCreate } from '../actions';
+import { carUpdate, carCreate, formReset } from '../actions';
 import { Card, CardSection, Button } from './common';
 import CarForm from './CarForm';
 
 class CarCreate extends Component {
+
+    componentWillMount() {
+        this.props.formReset();
+    }
 
     onButtonPress() {
         const {
@@ -68,5 +72,5 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-    carCreate
+    carUpdate, carCreate, formReset
 })(CarCreate);

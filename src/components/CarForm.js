@@ -23,7 +23,7 @@ class CarForm extends Component {
     render() {
         return (
             <View>
-                <CardSection>
+                <CardSection style={{ marginTop: 10 }}>
                     <Input
                         label="Name"
                         placeholder="Enter a name"
