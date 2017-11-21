@@ -43,11 +43,7 @@ class CarForm extends Component {
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
                         showIcon={false}
-                        customStyles={{
-                            placeholderText: {
-                                color: '#424444'
-                            }
-                        }}
+                        customStyles={dateCustomStyles}
                         onDateChange={date => this.props.carUpdate({ prop: 'techCheck', value: date })}
                     />
                 </CardSection>
@@ -62,11 +58,7 @@ class CarForm extends Component {
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
                         showIcon={false}
-                        customStyles={{
-                            placeholderText: {
-                                color: '#424444'
-                            }
-                        }}
+                        customStyles={dateCustomStyles}
                         onDateChange={date => this.props.carUpdate({ prop: 'maint', value: date })}
                     />
                 </CardSection>
@@ -81,11 +73,7 @@ class CarForm extends Component {
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
                         showIcon={false}
-                        customStyles={{
-                            placeholderText: {
-                                color: '#424444'
-                            }
-                        }}
+                        customStyles={dateCustomStyles}
                         onDateChange={date => this.props.carUpdate({ prop: 'citizenInsuranse', value: date })}
                     />
 
@@ -101,11 +89,7 @@ class CarForm extends Component {
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
                         showIcon={false}
-                        customStyles={{
-                            placeholderText: {
-                                color: '#424444'
-                            }
-                        }}
+                        customStyles={dateCustomStyles}
                         onDateChange={date => this.props.carUpdate({ prop: 'carInsurance', value: date })}
                     />
                 </CardSection>
@@ -120,11 +104,7 @@ class CarForm extends Component {
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
                         showIcon={false}
-                        customStyles={{
-                            placeholderText: {
-                                color: '#424444'
-                            }
-                        }}
+                        customStyles={dateCustomStyles}
                         onDateChange={date => this.props.carUpdate({ prop: 'winterTyres', value: date })}
                     />
                 </CardSection>
@@ -139,11 +119,7 @@ class CarForm extends Component {
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
                         showIcon={false}
-                        customStyles={{
-                            placeholderText: {
-                                color: '#424444'
-                            }
-                        }}
+                        customStyles={dateCustomStyles}
                         onDateChange={date => this.props.carUpdate({ prop: 'summerTyres', value: date })}
                     />
                 </CardSection>
@@ -162,7 +138,8 @@ const styles = {
 
     },
     dateStyle: {
-        flex: 1
+        flex: 1,
+        fontSize: 15
     },
     containerStyle: {
         flexDirection: 'row',
@@ -170,6 +147,18 @@ const styles = {
     }
 };
 
+const dateCustomStyles = {
+    placeholderText: {
+        color: '#c1c1c1'
+    },
+    dateInput: {
+        borderTopWidth: 0,
+        borderLeftWidth: 0,
+        borderRightWidth: 0,
+        marginLeft: 20,
+        marginRight: 20
+    }
+};
 
 const mapStateToProps = (state) => {
     const {

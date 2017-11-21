@@ -9,6 +9,7 @@ const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => 
 			<TextInput
 				secureTextEntry={secureTextEntry}
 				placeholder={placeholder}
+				placeholderTextColor='#c1c1c1'
 				style={inputStyle}
 				value={value}
 				onChangeText={onChangeText}
@@ -20,22 +21,23 @@ const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => 
 };
 
 const styles = {
-	inputStyle: {		
-		marginLeft: 11,
-		borderWidth: 1,
+	inputStyle: {
+
+		marginLeft: 20,
+		marginRight: 20,
+		borderBottomWidth: 1,
 		borderColor: '#252626',
 		textAlign: 'center',
-		color: '#252626',	
+		color: '#252626',
 		paddingRight: 5,
 		paddingLeft: 5,
-		fontSize: 17,
-		flex: 1
+		fontSize: 18,
+		flex: 2
 	},
 	labelStyle: {
-		
 		fontSize: 17,
 		paddingLeft: 20,
-		flex: 1,
+		flex: 3,
 		color: '#252626',
 	},
 	containerStyle: {
