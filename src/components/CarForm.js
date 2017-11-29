@@ -138,8 +138,7 @@ const styles = {
 
     },
     dateStyle: {
-        flex: 1,
-        fontSize: 15
+        flex: 1
     },
     containerStyle: {
         flexDirection: 'row',
@@ -152,11 +151,15 @@ const dateCustomStyles = {
         color: '#c1c1c1'
     },
     dateInput: {
+        borderColor: '#252626',
         borderTopWidth: 0,
         borderLeftWidth: 0,
         borderRightWidth: 0,
         marginLeft: 20,
         marginRight: 20
+    },
+    dateText: {
+        fontSize: 16
     }
 };
 

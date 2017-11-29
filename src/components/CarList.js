@@ -9,7 +9,7 @@ import ListItem from './ListItem';
 class CarList extends Component {
      componentWillMount() {
         this.props.carsFetch();
-        this.createDataSource(this.props);
+        this.createDataSource(this.props);        
     }
 
     componentWillReceiveProps(nextProps) {
