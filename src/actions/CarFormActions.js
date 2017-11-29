@@ -26,33 +26,34 @@ export const carCreate = ({
     carInsurance
  }) => {
     return (dispatch) => {
-        firebase.auth().onAuthStateChanged((user) => 
-        firebase.database().ref(`${user.uid}/cars/`)
-        .push({
-            name,
-            summerTyres,
-            winterTyres,
-            techCheck,
-            maint,
-            citizenInsuranse,
-            carInsurance
-        })
-        .then(() => {
-            dispatch({ type: CAR_CREATE });
-            Actions.carList();
-        })); 
+        firebase.auth().onAuthStateChanged((user) =>
+            firebase.database().ref(`${user.uid}/cars/`)
+                .push({
+                    name,
+                    summerTyres,
+                    winterTyres,
+                    techCheck,
+                    maint,
+                    citizenInsuranse,
+                    carInsurance
+                })
+                .then(() => {
+                    dispatch({ type: CAR_CREATE });
+                    Actions.carList();
+                })
+        );
     };
 };
 
-export const carsFetch = () => { 
+export const carsFetch = () => {
     return (dispatch) => {
-        firebase.auth().onAuthStateChanged((user) => 
-        firebase.database().ref(`${user.uid}/cars/`)
+        firebase.auth().onAuthStateChanged((user) =>
+            firebase.database().ref(`${user.uid}/cars/`)
                 .on('value', snapshot => {
                     dispatch({ type: CARS_FETCH_SUCCESS, payload: snapshot.val() });
                 }));
-        }; 
     };
+};
 
 export const carSave = ({
     name,
@@ -78,20 +79,19 @@ export const carSave = ({
                 })
                 .then(() => {
                     dispatch({ type: CARS_SAVE_SUCCESS });
-                    console.log('save successfull');
                     Actions.main({ type: 'reset' });
                 }));
     };
 };
 
 export const carDelete = ({ uid }) => {
-        return () => {
-            firebase.auth().onAuthStateChanged((user) => 
+    return () => {
+        firebase.auth().onAuthStateChanged((user) =>
             firebase.database().ref(`${user.uid}/cars/${uid}`)
-            .remove()
-            .then(() => {
-                Actions.main({ type: 'reset' });
-            }));
+                .remove()
+                .then(() => {
+                    Actions.main({ type: 'reset' });
+                }));
     };
 };
 

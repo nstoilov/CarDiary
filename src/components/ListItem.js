@@ -5,7 +5,6 @@ import { CardSection } from './common';
 
 class ListItem extends Component {
     onRowPress() {
-        console.log('row is pressed');
         Actions.carUpdate({ car: this.props.car });
     }
     render() {

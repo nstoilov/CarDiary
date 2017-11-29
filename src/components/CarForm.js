@@ -8,16 +8,13 @@ import { CardSection, Input, } from './common';
 
 class CarForm extends Component {
     async renderDatePicker() {
-        const { action, year, month, day } = await DatePickerAndroid.open({
+        const { action } = await DatePickerAndroid.open({
             date: new Date(),
             mode: 'spinner'
         });
-
         if (action === DatePickerAndroid.dismissedAction) {
             return;
         }
-
-        console.log({ action, year, month, day });
     }
 
     render() {
@@ -29,7 +26,6 @@ class CarForm extends Component {
                         placeholder="Enter a name"
                         value={this.props.name}
                         onChangeText={value => this.props.carUpdate({ prop: 'name', value })}
-                    //es6 value:value === value
                     />
                 </CardSection>
                 <CardSection style={styles.containerStyle}>
@@ -172,7 +168,6 @@ const mapStateToProps = (state) => {
         maint,
         citizenInsuranse,
         carInsurance } = state.carForm;
-
     return {
         name,
         summerTyres,

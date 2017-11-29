@@ -59,7 +59,6 @@ const mapStateToProps = (state) => {
         citizenInsuranse,
         carInsurance
      } = state.carForm;
-
     return {
         name,
         summerTyres,

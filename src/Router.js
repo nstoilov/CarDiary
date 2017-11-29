@@ -7,8 +7,7 @@ import CarUpdate from './components/CarUpdate';
 const RouterComponent = () => {
     return (
         <Router>
-            <Scene key="root" hideNavBar >
-                
+            <Scene key="root" hideNavBar >                
                 <Scene key="main">
                     <Scene
                         onRight={() => Actions.carCreate()}

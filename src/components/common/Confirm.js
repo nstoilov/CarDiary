@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View, Modal } from 'react-native';
-import { CardSection } from './CardSection';
+import { Card, CardSection } from './CardSection';
 import { Button } from './Button';
 
 
 const Confirm = ({ children, visible, onAccept, onDecline }) => {
-    const { containerStyle, textStyle, cardSectionStyle } = styles;
+    const { containerStyle, textStyle, cardSectionStyle, dialogStyle } = styles;
 
     return (
         <Modal
@@ -14,31 +14,35 @@ const Confirm = ({ children, visible, onAccept, onDecline }) => {
             animationType="fade"
             onRequestClose={() => { }}
         >
-            <View style={containerStyle}>
-
-                <CardSection style={cardSectionStyle}>
+            <View style={containerStyle}>     
+            <View style={dialogStyle}>  
+                <CardSection>
                     <Text style={textStyle}>
                         {children}
                     </Text>
                 </CardSection>
-                <CardSection style={cardSectionStyle}>
+                <CardSection>
                     <Button onPress={onAccept}>
                         Yes
                     </Button>
                     <Button onPress={onDecline}>
                         No
                     </Button>
-                </CardSection>
+                </CardSection>    
+                </View>            
             </View>
         </Modal>
     );
 };
 
 const styles = {
-
-    cardSectionStyle: {
+    dialogStyle: {
         backgroundColor: '#fff',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginLeft: 10,
+        marginBottom: 30,
+        marginRight: 10,
+        borderRadius: 2
     },
     textStyle: {
         flex: 1,
@@ -55,7 +59,7 @@ const styles = {
         backgroundColor: 'rgba(0, 0, 0, 0.75)',
         position: 'relative',
         flex: 1,
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
     }
 };
 
