@@ -8,7 +8,7 @@ const RouterComponent = () => {
     return (
         <Router>
             <Scene key="root" hideNavBar >                
-                <Scene key="main">
+                <Scene key="main" navigationBarStyle={styles.navigationBarStyle} titleStyle={styles.titleStyle}>
                     <Scene
                         onRight={() => Actions.carCreate()}
                         rightTitle="Add"
@@ -23,6 +23,17 @@ const RouterComponent = () => {
             </Scene>
         </Router>
     );
+};
+
+const styles = {
+    navigationBarStyle: {
+        backgroundColor: '#fff',
+        bottomBorderWidth: 1
+    },
+    titleStyle: {
+        fontSize: 20,
+        fontWeight: '400'
+    }
 };
 
 export default RouterComponent;
