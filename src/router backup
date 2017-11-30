@@ -10,7 +10,7 @@ const RouterComponent = () => {
         return (
         <Router>
             <Scene key="root" hideNavBar >                
-                <Scene key="main" navigationBarStyle={styles.navigationBarStyle} titleStyle={styles.titleStyle}>
+                <Scene back={false} key="main" navigationBarStyle={styles.navigationBarStyle} titleStyle={styles.titleStyle}>
                     <Scene                    
                         onRight={() => Actions.carCreate()}
                         rightTitle={
@@ -28,10 +28,10 @@ const RouterComponent = () => {
                         component={CarList}
                         title="Car List"
                         initial
-                    />                    
+                    />
                     <Scene key="carCreate" component={CarCreate} title="Create Car" />
                     <Scene key="carUpdate" component={CarUpdate} title="Edit Car" />
-                    </Scene>
+                </Scene>
             </Scene>
         </Router>
     );

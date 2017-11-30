@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View, Modal } from 'react-native';
-import { Card, CardSection } from './CardSection';
+import { CardSection } from './CardSection';
 import { Button } from './Button';
 
 
 const Confirm = ({ children, visible, onAccept, onDecline }) => {
-    const { containerStyle, textStyle, cardSectionStyle, dialogStyle } = styles;
+    const { containerStyle, textStyle, dialogStyle } = styles;
 
     return (
         <Modal

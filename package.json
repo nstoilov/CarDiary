@@ -13,6 +13,7 @@
     "react": "16.0.0-beta.5",
     "react-native": "0.49.3",
     "react-native-datepicker": "^1.6.0",
+    "react-native-fontawesome": "^5.7.0",
     "react-native-router-flux": "^4.0.0-beta.22",
     "react-native-unique-id": "^1.0.4",
     "react-redux": "^5.0.6",
