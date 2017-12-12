@@ -1,17 +1,19 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import FontAwesome, { Icons } from 'react-native-fontawesome';
+//import Emoji from 'react-native-emoji';
+//     <Text><Emoji name="coffee" /></Text>
 import CarList from './components/CarList';
 import CarCreate from './components/CarCreate';
 import CarUpdate from './components/CarUpdate';
 
 const RouterComponent = () => {
-        return (
+    return (
         <Router>
-            <Scene key="root" hideNavBar >                
-                <Scene back={false} key="main" navigationBarStyle={styles.navigationBarStyle} titleStyle={styles.titleStyle}>
-                    <Scene                    
+            <Scene hideNavBar key="root">
+                <Scene key="main" navigationBarStyle={styles.navigationBarStyle} titleStyle={styles.titleStyle}>
+                    <Scene
                         onRight={() => Actions.carCreate()}
                         rightTitle={
                             <Text>
@@ -29,6 +31,7 @@ const RouterComponent = () => {
                         title="Car List"
                         initial
                     />
+
                     <Scene key="carCreate" component={CarCreate} title="Create Car" />
                     <Scene key="carUpdate" component={CarUpdate} title="Edit Car" />
                 </Scene>
@@ -46,10 +49,10 @@ const styles = {
         fontSize: 20,
         fontWeight: '400'
     },
-    rightButtonTextStyle: {        
+    rightButtonTextStyle: {
         fontSize: 20,
         color: '#007aff',
-        marginLeft: 10,       
+        marginLeft: 10,
     }
 };
 

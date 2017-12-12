@@ -15,20 +15,21 @@ const Button = ({ onPress, children }) => {
 
 const styles = {
   textStyle: {
+    fontFamily: 'permanentmarker',
     alignSelf: 'center',
-    color: '#007aff',
-    fontSize: 16,
-    fontWeight: '600',
+    color: '#fff',
+    fontSize: 20,
+  //  fontWeight: '500',
     paddingTop: 10,
     paddingBottom: 10
   },
   buttonStyle: {
     flex: 1,
     alignSelf: 'stretch',
-    backgroundColor: '#fff',
+    backgroundColor: '#00bcd4',
     borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#007aff',
+   // borderWidth: 1,
+   // borderColor: '#007aff',
     marginLeft: 10,
     marginRight: 10,
     marginTop: 5,

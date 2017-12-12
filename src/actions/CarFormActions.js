@@ -39,7 +39,7 @@ export const carCreate = ({
                 })
                 .then(() => {
                     dispatch({ type: CAR_CREATE });
-                    Actions.carList();
+                    Actions.main();
                 })
         );
     };

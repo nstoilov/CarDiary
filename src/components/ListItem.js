@@ -31,10 +31,13 @@ class ListItem extends Component {
                 marginRight: 20,
                 justifyContent: 'center',
                 borderBottomWidth: 1,
-                borderColor: '#ddd'
+                borderColor: '#00bcd4'
             },
             textStyle: {
-                fontSize: 20 
+                fontFamily: 'permanentmarker',
+                color: '#00bcd4',
+                fontSize: 30,
+            //    fontWeight: '600'
             }
         };
 

@@ -7,9 +7,10 @@ const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => 
 		<View style={containerStyle}>
 			<Text style={labelStyle}>{label}</Text>
 			<TextInput
+				autoCapitalize='sentences'
 				secureTextEntry={secureTextEntry}
 				placeholder={placeholder}
-				placeholderTextColor='#c1c1c1'
+				placeholderTextColor='#00bcd4'
 				style={inputStyle}
 				value={value}
 				onChangeText={onChangeText}
@@ -28,10 +29,10 @@ const styles = {
 		borderBottomWidth: 1,
 		borderColor: '#252626',
 		textAlign: 'center',
-		color: '#252626',
+		color: '#00bcd4',
 		paddingRight: 5,
 		paddingLeft: 5,
-		fontSize: 18,
+		fontSize: 14,
 		flex: 2
 	},
 	labelStyle: {

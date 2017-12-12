@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
+//import { View } from 'react-native';
 import { connect } from 'react-redux';
 import CarForm from './CarForm';
 import { carUpdate, carSave, carDelete } from '../actions';
@@ -49,15 +50,14 @@ class CarUpdate extends Component {
 
 
     render() {
-        return (
-            <Card>
-                <CarForm />
+        return (            
+            <Card>                
+                <CarForm />                
                 <CardSection >
                     <Button onPress={this.onButtonPress.bind(this)}>
                         Save Changes
                     </Button>
                 </CardSection>
-
                 <CardSection>
                     <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
                         Delete Car
@@ -70,7 +70,7 @@ class CarUpdate extends Component {
                 >
                     Are you sure you want to delete this?
                 </Confirm>
-            </Card>
+            </Card>            
         );
     }
 }

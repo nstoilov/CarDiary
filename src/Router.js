@@ -1,55 +1,77 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Image } from 'react-native';
 import { Scene, Router, Actions } from 'react-native-router-flux';
-import FontAwesome, { Icons } from 'react-native-fontawesome';
+//import FontAwesome, { Icons } from 'react-native-fontawesome';
+//import Emoji from 'react-native-emoji';
+//     <Text><Emoji name="coffee" /></Text>
 import CarList from './components/CarList';
 import CarCreate from './components/CarCreate';
 import CarUpdate from './components/CarUpdate';
 
 const RouterComponent = () => {
-        return (
+    return (
         <Router>
-            <Scene key="root" hideNavBar >                
-                <Scene key="main" navigationBarStyle={styles.navigationBarStyle} titleStyle={styles.titleStyle}>
-                    <Scene                    
+            <Scene hideNavBar key="root">
+                <Scene
+                    navBarButtonColor='#fff'
+                    key="main"
+                    navigationBarStyle={styles.navigationBarStyle}
+                    titleStyle={styles.titleStyle}
+                >
+                    <Scene
                         onRight={() => Actions.carCreate()}
-                        rightTitle={
-                            <Text>
-                                <Text>
-                                    +
-                                </Text>
-                                <FontAwesome>
-                                    {Icons.car}
-                                </FontAwesome>
-                            </Text>
-                        }
                         rightButtonTextStyle={styles.rightButtonTextStyle}
+                        rightTitle={
+                            <Image
+                                style={styles.rightButtonImageStyle}
+                                source={require('./images/right_button.png')}
+                            />
+                        }
                         key="carList"
                         component={CarList}
-                        title="Car List"
+                        navigationBarTitleImage={require('./images/cars.png')}
                         initial
-                    />                    
-                    <Scene key="carCreate" component={CarCreate} title="Create Car" />
-                    <Scene key="carUpdate" component={CarUpdate} title="Edit Car" />
-                    </Scene>
+                    />
+
+                    <Scene
+                        key="carCreate"
+                        component={CarCreate}
+                        navigationBarTitleImage={require('./images/add.png')}
+                    />
+                    <Scene
+                        key="carUpdate"
+                        component={CarUpdate}
+                        navigationBarTitleImage={require('./images/edit.png')}
+                    />
+                </Scene>
             </Scene>
         </Router>
     );
 };
 
 const styles = {
+    navigationBarTitleImageStyle: {
+        flex: 1,
+        width: 680,
+        height: 120,
+    //    resizeMode: 'contain'
+    },
     navigationBarStyle: {
-        backgroundColor: '#fff',
+        fontFamily: null,
+        backgroundColor: '#00bcd4',
         borderBottomWidth: 0
     },
     titleStyle: {
-        fontSize: 20,
-        fontWeight: '400'
+        fontFamily: null,
+        color: '#fff',
+        fontSize: 20
+        //    fontWeight: '600'
     },
-    rightButtonTextStyle: {        
-        fontSize: 20,
-        color: '#007aff',
-        marginLeft: 10,       
+    rightButtonImageStyle: {
+        flex: 1,
+        width: 180,
+        height: 180,
+        resizeMode: 'contain'
     }
 };
 

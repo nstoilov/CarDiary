@@ -127,7 +127,7 @@ class CarForm extends Component {
 const styles = {
     nameStyle: {
         flex: 1,
-        fontSize: 17,
+        fontSize: 18,
         paddingLeft: 20,
         color: '#252626',
         alignItems: 'center'
@@ -144,7 +144,7 @@ const styles = {
 
 const dateCustomStyles = {
     placeholderText: {
-        color: '#c1c1c1'
+        color: '#00bcd4'
     },
     dateInput: {
         borderColor: '#252626',
@@ -155,7 +155,7 @@ const dateCustomStyles = {
         marginRight: 20
     },
     dateText: {
-        fontSize: 16
+        fontSize: 17
     }
 };
 
