@@ -9,37 +9,36 @@ class ListItem extends Component {
     }
     render() {
         const { name } = this.props.car;
-        return (         
+        return (
             <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
-            <View>  
-            <CardSection style={styles.cardSectionStyle}>
-                <Text style={styles.textStyle}>
-                    {name}
-                </Text>
-            </CardSection>      
-            </View>
-            </TouchableWithoutFeedback>      
+                <View>
+                    <CardSection style={styles.cardSectionStyle}>
+                        <Text style={styles.textStyle}>
+                            {name}
+                        </Text>
+                    </CardSection>
+                </View>
+            </TouchableWithoutFeedback>
         );
     }
 }
 
-    const styles = {        
-            cardSectionStyle: {
-                marginTop: 15,
-                marginBottom: 5,
-                marginLeft: 20,
-                marginRight: 20,
-                justifyContent: 'center',
-                borderBottomWidth: 1,
-                borderColor: '#00bcd4'
-            },
-            textStyle: {
-                fontFamily: 'permanentmarker',
-                color: '#00bcd4',
-                fontSize: 30,
-            //    fontWeight: '600'
-            }
-        };
+const styles = {
+    cardSectionStyle: {
+        marginTop: 15,
+        marginBottom: 5,
+        marginLeft: 20,
+        marginRight: 20,
+        justifyContent: 'center',
+        borderBottomWidth: 1,
+        borderColor: '#00bcd4'
+    },
+    textStyle: {
+        fontFamily: 'permanentmarker',
+        color: '#00bcd4',
+        fontSize: 30
+    }
+};
 
 export default ListItem;
 

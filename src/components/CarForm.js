@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View, DatePickerAndroid } from 'react-native';
 import { connect } from 'react-redux';
 import DatePicker from 'react-native-datepicker';
-// import { Actions } from 'react-native-router-flux';
 import { carUpdate } from '../actions';
 import { CardSection, Input, } from './common';
 

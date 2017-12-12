@@ -37,7 +37,6 @@ class CarList extends Component {
                     renderRow={this.renderRow}
                 />
             </Card>
-
         );
     }
 }
