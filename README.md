@@ -1,10 +1,11 @@
 # Car Diary
 
 A small React Native Android application to help track the dates for your car insurance, maintenance etc.
-Uses Redux and Firebase.
+Uses Redux and Firebase. Based off of Stephen Grider's [Udemy React Native course](https://www.udemy.com/the-complete-react-native-and-redux-course/learn/v4/content)
 
 
 ## Get it on the Google Play Store soon
+
 
 ## Built With
 
