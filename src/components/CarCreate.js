@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { View } from 'react-native';
 import { carUpdate, carCreate, formReset } from '../actions';
-import { Card, CardSection, Button } from './common';
+import { CardSection, Button } from './common';
 import CarForm from './CarForm';
 
 class CarCreate extends Component {
@@ -34,17 +35,28 @@ class CarCreate extends Component {
 
     render() {
         return (
-            <Card>
+            <View style={styles.card}>
+  
                 <CarForm {...this.props} />
                 <CardSection>
                     <Button onPress={this.onButtonPress.bind(this)}>
                         Create
                     </Button>
                 </CardSection>
-            </Card>
+       
+            </View>
         );
     }
 }
+
+
+const styles = {
+    card: {
+        flex: 1,
+        backgroundColor: '#fff',
+        justifyContent: 'space-between'
+    }
+};
 
 
 const mapStateToProps = (state) => {

@@ -19,7 +19,6 @@ const styles = {
     alignSelf: 'center',
     color: '#fff',
     fontSize: 20,
-  //  fontWeight: '500',
     paddingTop: 10,
     paddingBottom: 10
   },
@@ -28,11 +27,9 @@ const styles = {
     alignSelf: 'stretch',
     backgroundColor: '#00bcd4',
     borderRadius: 5,
-   // borderWidth: 1,
-   // borderColor: '#007aff',
     marginLeft: 10,
     marginRight: 10,
-    marginTop: 5,
+    marginTop: 10,
     marginBottom: 5
   }
 };

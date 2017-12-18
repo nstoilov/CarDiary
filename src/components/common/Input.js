@@ -10,7 +10,7 @@ const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => 
 				autoCapitalize='sentences'
 				secureTextEntry={secureTextEntry}
 				placeholder={placeholder}
-				placeholderTextColor='#00bcd4'
+				placeholderTextColor='#444444'
 				style={inputStyle}
 				value={value}
 				onChangeText={onChangeText}
@@ -29,17 +29,17 @@ const styles = {
 		borderBottomWidth: 1,
 		borderColor: '#252626',
 		textAlign: 'center',
-		color: '#00bcd4',
+		color: '#444444',
 		paddingRight: 5,
 		paddingLeft: 5,
-		fontSize: 14,
+		fontSize: 17,
 		flex: 2
 	},
 	labelStyle: {
 		fontSize: 17,
 		paddingLeft: 20,
 		flex: 3,
-		color: '#252626',
+		color: '#444444',
 	},
 	containerStyle: {
 		height: 40,

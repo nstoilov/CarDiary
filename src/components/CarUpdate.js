@@ -1,9 +1,10 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { View } from 'react-native';
 import CarForm from './CarForm';
 import { carUpdate, carSave, carDelete } from '../actions';
-import { Card, CardSection, Button, Confirm } from './common';
+import { CardSection, Button, Confirm } from './common';
 
 class CarUpdate extends Component {
     state = { showModal: false };
@@ -48,8 +49,8 @@ class CarUpdate extends Component {
 
 
     render() {
-        return (
-            <Card>
+        return (            
+            <View style={styles.card}>
                 <CarForm />
                 <CardSection >
                     <Button onPress={this.onButtonPress.bind(this)}>
@@ -68,10 +69,18 @@ class CarUpdate extends Component {
                 >
                     Are you sure you want to delete this?
                 </Confirm>
-            </Card>
+            </View>
         );
     }
 }
+
+const styles = {
+    card: {
+        flex: 1,
+        backgroundColor: '#fff',
+        justifyContent: 'space-between'
+    }
+};
 
 const mapStateToProps = (state) => {
     const {

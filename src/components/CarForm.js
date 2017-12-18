@@ -3,7 +3,7 @@ import { Text, View, DatePickerAndroid } from 'react-native';
 import { connect } from 'react-redux';
 import DatePicker from 'react-native-datepicker';
 import { carUpdate } from '../actions';
-import { CardSection, Input, } from './common';
+import { CardSection, Input, Card } from './common';
 
 class CarForm extends Component {
     async renderDatePicker() {
@@ -18,7 +18,7 @@ class CarForm extends Component {
 
     render() {
         return (
-            <View>
+            <View>                
                 <CardSection style={{ marginTop: 10 }}>
                     <Input
                         label="Name"
@@ -117,7 +117,7 @@ class CarForm extends Component {
                         customStyles={dateCustomStyles}
                         onDateChange={date => this.props.carUpdate({ prop: 'summerTyres', value: date })}
                     />
-                </CardSection>
+                </CardSection>            
             </View>
         );
     }
@@ -143,7 +143,7 @@ const styles = {
 
 const dateCustomStyles = {
     placeholderText: {
-        color: '#00bcd4'
+        color: '#444444'
     },
     dateInput: {
         borderColor: '#252626',

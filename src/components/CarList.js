@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ListView } from 'react-native';
+import { ListView, ImageBackground, Text } from 'react-native';
 import { carsFetch } from '../actions';
 import { Card } from './common';
 import ListItem from './ListItem';
@@ -30,6 +30,10 @@ class CarList extends Component {
 
     render() {
         return (
+            <ImageBackground 
+              style={styles.ImageBackground}
+              source={require('../images/bgLong.png')}
+            >
             <Card>
                 <ListView
                     enableEmptySections
@@ -37,9 +41,16 @@ class CarList extends Component {
                     renderRow={this.renderRow}
                 />
             </Card>
+            </ImageBackground>
         );
     }
 }
+
+const styles = {
+    ImageBackground: {
+        flex: 1
+    }
+};
 
 const mapstateToProps = state => {
     const cars = _.map(state.cars, (val, uid) => {
