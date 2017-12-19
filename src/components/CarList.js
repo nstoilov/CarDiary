@@ -48,7 +48,10 @@ class CarList extends Component {
 
 const styles = {
     imageBackground: {
-       flex: 1 
+       flex: 1,
+       width: null,
+       height: null,
+       resizeMode: 'contain'
     }
 };
 
