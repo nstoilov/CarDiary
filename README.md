@@ -4,7 +4,8 @@ A small React Native Android application to help track the dates for your car in
 Uses Redux and Firebase.
 
 
-## Get it on the Google Play Store soon
+## Get it on the Google Play Store
+[Play store link](https://play.google.com/store/apps/details?id=com.cardiary)
 
 
 ## Built With
