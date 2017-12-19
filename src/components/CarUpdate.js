@@ -49,26 +49,28 @@ class CarUpdate extends Component {
 
 
     render() {
-        return (            
+        return (
             <View style={styles.card}>
                 <CarForm />
-                <CardSection >
-                    <Button onPress={this.onButtonPress.bind(this)}>
-                        Save Changes
+                <View>
+                    <CardSection >
+                        <Button onPress={this.onButtonPress.bind(this)}>
+                            Save Changes
                     </Button>
-                </CardSection>
-                <CardSection>
-                    <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
-                        Delete Car
+                    </CardSection>
+                    <CardSection>
+                        <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
+                            Delete Car
                     </Button>
-                </CardSection>
-                <Confirm
-                    visible={this.state.showModal}
-                    onAccept={this.onAccept.bind(this)}
-                    onDecline={this.onDecline.bind(this)}
-                >
-                    Are you sure you want to delete this?
+                    </CardSection>
+                    <Confirm
+                        visible={this.state.showModal}
+                        onAccept={this.onAccept.bind(this)}
+                        onDecline={this.onDecline.bind(this)}
+                    >
+                        Are you sure you want to delete this?
                 </Confirm>
+                </View>
             </View>
         );
     }
